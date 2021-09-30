@@ -1,7 +1,8 @@
 import React from "react";
+import { Text } from "react-native";
 
 const WalletScreen = () => {
-  return <div>Wallet</div>;
+  return <Text>Wallet</Text>;
 };
 
 export default WalletScreen;

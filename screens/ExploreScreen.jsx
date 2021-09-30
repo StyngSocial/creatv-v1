@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Text } from "react-native";
 const ExploreScreen = () => {
-  return <div>Explore Screen</div>;
+  return <Text>Explore Screen</Text>;
 };
 
 export default ExploreScreen;
