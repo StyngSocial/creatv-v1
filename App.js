@@ -3,6 +3,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 import { Avatar, Hamburger } from "./components/AppBar";
 
 // Screens
@@ -16,7 +18,25 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let icon;
+
+            if (route.name == "~/creatv") {
+              icon = focused ? "home" : "home-outline";
+            } else if (route.name == "Explore") {
+              icon = focused ? "search" : "search-outline";
+            } else if (route.name == "Notifications") {
+              icon = focused ? "notifications" : "notifications-outline";
+            } else if (route.name == "Wallet") {
+              icon = focused ? "wallet" : "wallet-outline";
+            }
+            return <Ionicons name={icon} size={30} />;
+          },
+        })}
+        tabBarOptions={{ showLabel: false }}
+      >
         <Tab.Screen
           name="~/creatv"
           component={HomeScreen}
