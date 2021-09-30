@@ -5,40 +5,23 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import avatar from "../assets/avatar.jpeg";
 
-export const AppBar = () => {
-  return (
-    <View style={styles.appBar}>
-      <View style={styles.content}>
-        <Image style={styles.avatar} source={avatar} />
-        <Text style={styles.logo}>~/creatv</Text>
-        <FontAwesomeIcon icon={faBars} />
-      </View>
-    </View>
-  );
+export const Avatar = () => {
+  return <Image style={styles.avatar} source={avatar} />;
+};
+
+export const Hamburger = () => {
+  return <FontAwesomeIcon style={styles.icon} icon={faBars} />;
 };
 
 const styles = StyleSheet.create({
-  appBar: {
-    backgroundColor: "#fff",
-    width: "100%",
-    height: 50,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddf",
-  },
-  content: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 10,
-  },
   avatar: {
     width: 30,
     height: 30,
     borderRadius: 100,
+    marginLeft: 10,
   },
-  logo: {
-    fontSize: 20,
+  icon: {
+    marginRight: 10,
   },
 });
 
