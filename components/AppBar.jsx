@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { StyleSheet, Image } from "react-native";
+
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import avatar from "../assets/avatar.jpeg";
 
@@ -10,7 +10,7 @@ export const Avatar = () => {
 };
 
 export const Hamburger = () => {
-  return <FontAwesomeIcon style={styles.icon} icon={faBars} />;
+  return <Ionicons style={styles.icon} name="menu" size={25} />;
 };
 
 const styles = StyleSheet.create({
@@ -24,5 +24,3 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
-
-export default AppBar;
