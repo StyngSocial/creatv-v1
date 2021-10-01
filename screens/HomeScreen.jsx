@@ -1,9 +1,16 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
+import posts from "../_data/posts.json";
+
+import Post from "../components/Post";
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
+    <View>
+      <ScrollView>
+        {posts.map((item) => {
+          return <Post post={item.post} key={item.post.postId} />;
+        })}
+      </ScrollView>
     </View>
   );
 };
